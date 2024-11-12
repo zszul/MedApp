@@ -38,10 +38,7 @@ app.get("/api/drug/:name", async (req, res) => {
         },
       ];
 
-      console.log("Filtered Data Object:", filteredData); // Log filteredData before wrapping
-
       res.json(filteredData);
-      console.log("Response sent with filteredData."); // Sends filteredData as an array
     } else {
       res.status(404).json({ message: "No data found for the specified drug" });
     }

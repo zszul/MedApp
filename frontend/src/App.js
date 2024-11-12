@@ -5,7 +5,7 @@ function App() {
   const [drugInfo, setDrugInfo] = useState([]);
   const [homePage, setHomePage] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
-  const [notFound, setNotFound] = useState(false); // State for not found message
+  const [notFound, setNotFound] = useState(false);
 
   const getDrugInfo = async (drugName) => {
     try {
@@ -14,15 +14,15 @@ function App() {
       );
       if (response.data && response.data.length > 0) {
         setDrugInfo(response.data);
-        setNotFound(false); // Reset not found message if data is available
+        setNotFound(false);
       } else {
         setDrugInfo([]);
-        setNotFound(true); // Set not found message if no data is returned
+        setNotFound(true);
       }
     } catch (error) {
       console.error("Error fetching drug data:", error);
       setDrugInfo([]);
-      setNotFound(true); // Set not found message on error
+      setNotFound(true);
     }
   };
 
